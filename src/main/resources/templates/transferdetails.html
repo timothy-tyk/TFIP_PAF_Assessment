@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Acme Bank</title>
+  </head>
+  <body data-th-object="${transfer}">
+    <h1>Success!</h1>
+    <div>
+      <span>Your transfer of $</span><span data-th-text="*{amount}"></span>
+    </div>
+    <div>
+      from <span data-th-text="${fromName}"></span>(<span
+        data-th-text="*{fromId}"
+      ></span
+      >)
+    </div>
+    <div>
+      <span>to</span> <span data-th-text="${toName}"></span>(<span
+        data-th-text="*{toId}"
+      ></span
+      >)
+    </div>
+    <div>is successful.</div>
+
+    <br />
+    <span>Transaction id is <span data-th-text="*{transactionId}"></span></span>
+  </body>
+</html>
