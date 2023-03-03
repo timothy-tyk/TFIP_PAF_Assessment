@@ -6,6 +6,7 @@ import java.util.UUID;
 import jakarta.json.Json;
 import jakarta.json.JsonObject;
 import jakarta.validation.constraints.DecimalMin;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.Size;
 import lombok.AllArgsConstructor;
@@ -23,6 +24,7 @@ public class Transfer {
 
   @DecimalMin(value = "10.00", message="Minimum transfer amount is $10")
   @Positive(message="Transfer amount must be positive number")
+  @NotNull(message="Enter an amount!")
   private Float amount;
 
   private String comments;

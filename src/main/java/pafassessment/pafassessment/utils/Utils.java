@@ -15,8 +15,8 @@ public class Utils {
     Boolean condition0 = accountIds.contains(trf.getFromId()) && accountIds.contains(trf.getToId());
     Boolean condition1 = trf.getFromId().length()==10 && trf.getToId().length()==10;
     Boolean condition2 = !trf.getFromId().equals(trf.getToId());
-    Boolean condition3and4 = trf.getAmount()>=10;
-    Boolean condition5 = fromAccount.getBalance()>=trf.getAmount();
+    Boolean condition3and4 = trf.getAmount()!=null && trf.getAmount()>=10;
+    Boolean condition5 = trf.getAmount()!=null && fromAccount.getBalance()>=trf.getAmount();
     if(!condition0) errors.add("Accounts have to exist in database!");
     if(!condition1) errors.add("Account Ids have to be 10 characters!");
     if(!condition2) errors.add("From and To accounts cannot be the same!");
